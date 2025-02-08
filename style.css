@@ -399,6 +399,30 @@ body {
     cursor: pointer;
 }
 
+/* Responsive Chat Box */
+@media (max-width: 768px) {
+    .chat-popup {
+        width: 90%;
+        bottom: 20px;
+        right: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-popup {
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+    }
+    #user-input {
+        width: 70%;
+    }
+    #send-btn {
+        width: 30%;
+    }
+}
+
 .chat-popup {
     display: none;
     position: fixed;
