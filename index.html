@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Website</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="chat-btn">💬 Chat with AI</button>
+
+    <div id="chat-popup" class="chat-popup">
+        <div class="chat-header">
+            <span>AI Chat</span>
+            <button id="close-chat">✖</button>
+        </div>
+        <div id="chat-box" class="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button id="send-btn">Send</button>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png " alt="Logo" />
+        </a>
+
+        <!-- Navbar Toggler (Mobile) -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="servicesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                Our Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Service 1</a></li>
+                <li><a class="dropdown-item" href="#">Service 2</a></li>
+                <li><a class="dropdown-item" href="#">Service 3</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+
+          <!-- Get Started Button -->
+          <a href="#" class="btn btn-primary d-none d-lg-block">Get Started</a>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section with Slider -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="0"
+          class="active"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide-to="2"
+        ></button>
+      </div>
+
+      <!-- Slides -->
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div
+          class="carousel-item active"
+          style="background-image: url('images/pic3.jpg')"
+        >
+          <div class="carousel-caption">
+            <h1>Welcome to Our Website</h1>
+            <p>Discover amazing services that help you grow your business.</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div
+          class="carousel-item"
+          style="background-image: url('images/pic1.jpeg')"
+        >
+          <div class="carousel-caption">
+            <h1>Your Success is Our Goal</h1>
+            <p>Providing top-notch solutions to elevate your brand.</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div
+          class="carousel-item"
+          style="background-image: url('images/Pic2.jpeg')"
+        >
+          <div class="carousel-caption">
+            <h1>Innovate and Transform</h1>
+            <p>Join us in shaping the future of digital excellence.</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left & Right Arrows -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Side (Tabs) -->
+          <div class="col-lg-6">
+            <h2 class="about-title">About Us</h2>
+
+            <!-- Tabs -->
+            <ul class="nav nav-tabs" id="aboutTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="company-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#company"
+                  type="button"
+                  role="tab"
+                >
+                  Our Company
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="mission-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#mission"
+                  type="button"
+                  role="tab"
+                >
+                  Our Mission
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="vision-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#vision"
+                  type="button"
+                  role="tab"
+                >
+                  Our Vision
+                </button>
+              </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="aboutTabsContent">
+              <!-- Our Company Tab -->
+              <div
+                class="tab-pane fade show active"
+                id="company"
+                role="tabpanel"
+              >
+                <h3>Who We Are</h3>
+                <p>
+                  We are a leading IT company focused on delivering high-quality
+                  digital solutions to businesses worldwide.
+                </p>
+                <a href="#" class="btn btn-primary btn-learn-more"
+                  >Learn More</a
+                >
+              </div>
+
+              <!-- Our Mission Tab -->
+              <div class="tab-pane fade" id="mission" role="tabpanel">
+                <h3>Our Mission</h3>
+                <p>
+                  Our mission is to innovate and provide cutting-edge solutions
+                  that empower businesses to thrive in the digital era.
+                </p>
+                <a href="#" class="btn btn-primary btn-learn-more"
+                  >Learn More</a
+                >
+              </div>
+
+              <!-- Our Vision Tab -->
+              <div class="tab-pane fade" id="vision" role="tabpanel">
+                <h3>Our Vision</h3>
+                <p>
+                  We envision a future where technology seamlessly integrates
+                  with businesses to drive growth and success.
+                </p>
+                <a href="#" class="btn btn-primary btn-learn-more"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side (Image) -->
+          <div class="col-lg-6 about-image">
+            <img src="images/pic4.jpg" alt="About Us Image" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Our Services Section -->
+    <section class="services-section">
+      <div class="container">
+        <h2>Our Services</h2>
+        <p>
+          We offer a range of high-quality services designed to help businesses
+          thrive in the digital world. Explore our innovative solutions tailored
+          to your needs.
+        </p>
+
+        <div class="row">
+          <!-- Service 1 -->
+          <div class="col-md-4 mb-4">
+            <div class="service-box">
+              <i class="fas fa-laptop-code service-icon"></i>
+              <h3>Service 1</h3>
+              <p>
+                We provide cutting-edge web development solutions to enhance
+                your online presence.
+              </p>
+              <a href="#" class="btn btn-primary btn-read-more">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="col-md-4 mb-4">
+            <div class="service-box">
+              <i class="fas fa-mobile-alt service-icon"></i>
+              <h3>Service 2</h3>
+              <p>
+                Our mobile app development services ensure seamless user
+                experiences.
+              </p>
+              <a href="#" class="btn btn-primary btn-read-more">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="col-md-4 mb-4">
+            <div class="service-box">
+              <i class="fas fa-chart-line service-icon"></i>
+              <h3>Service 3</h3>
+              <p>
+                Grow your brand with our top-notch digital marketing strategies.
+              </p>
+              <a href="#" class="btn btn-primary btn-read-more">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="col-md-4 mb-4">
+            <div class="service-box">
+              <i class="fas fa-cloud service-icon"></i>
+              <h3>Service 4</h3>
+              <p>
+                We offer secure cloud solutions to enhance your business
+                efficiency.
+              </p>
+              <a href="#" class="btn btn-primary btn-read-more">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="col-md-4 mb-4">
+            <div class="service-box">
+              <i class="fas fa-lock service-icon"></i>
+              <h3>Service 5</h3>
+              <p>
+                Protect your data with our advanced cybersecurity solutions.
+              </p>
+              <a href="#" class="btn btn-primary btn-read-more">Read More</a>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="col-md-4 mb-4">
+            <div class="service-box">
+              <i class="fas fa-headset service-icon"></i>
+              <h3>Service 6</h3>
+              <p>
+                Get expert IT consulting to streamline your business operations.
+              </p>
+              <a href="#" class="btn btn-primary btn-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+      <div class="container">
+        <h2>Our Portfolio</h2>
+        <p>
+          Here are some of our recent projects that showcase our expertise in
+          web development, design, and digital solutions.
+        </p>
+
+        <div class="row">
+          <!-- Project 1 -->
+          <div class="col-md-6 mb-4">
+            <div class="project-box">
+              <img src="images/project1.png" alt="Project 1" />
+              <h3>Project 1</h3>
+              <p>
+                A cutting-edge e-commerce website with a seamless user
+                experience and modern design.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="col-md-6 mb-4">
+            <div class="project-box">
+              <img src="images/project2.png" alt="Project 2" />
+              <h3>Project 2</h3>
+              <p>
+                A responsive corporate website designed to enhance brand
+                visibility and customer engagement.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="col-md-6 mb-4">
+            <div class="project-box">
+              <img src="images/project3.png" alt="Project 3" />
+              <h3>Project 3</h3>
+              <p>
+                A feature-rich mobile app that simplifies task management and
+                boosts productivity.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="col-md-6 mb-4">
+            <div class="project-box">
+              <img src="images/project4.png" alt="Project 4" />
+              <h3>Project 4</h3>
+              <p>
+                A powerful SaaS platform designed to streamline business
+                operations and improve efficiency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>
+          We would love to hear from you! Feel free to reach out for any queries
+          or feedback.
+        </p>
+
+        <div class="row g-4">
+          <!-- Contact Form -->
+          <div class="col-lg-6">
+            <div class="contact-form">
+              <form>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <textarea
+                    class="form-control"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-custom w-100">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Contact Details & Map -->
+          <div class="col-lg-6">
+            <div class="contact-info text-center">
+              <h3>Get in Touch</h3>
+              <p><i class="bi bi-geo-alt"></i> 123 Street, City, Country</p>
+              <p><i class="bi bi-envelope"></i> contact@example.com</p>
+              <p><i class="bi bi-telephone"></i> +123 456 7890</p>
+            </div>
+            <div class="map-container mt-3">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345086164!2d144.95592831590405!3d-37.8172097420214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf4c5f67e0b4a31c!2sMelbourne%2C%20Victoria%2C%20Australia!5e0!3m2!1sen!2sin!4v1634117474557!5m2!1sen!2sin"
+                width="100%"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="footer bg-dark text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row">
+          <!-- About Section -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-uppercase fw-bold">Our Company</h5>
+            <p class="small">
+              We provide high-quality IT solutions for businesses. Our goal is
+              to bring innovation and technology together.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-uppercase fw-bold">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-white text-decoration-none">Home</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">About</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">Services</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Media Links -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-uppercase fw-bold">Follow Us</h5>
+            <div class="d-flex">
+              <a href="#" class="btn btn-outline-light btn-sm me-2"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="btn btn-outline-light btn-sm me-2"
+                ><i class="bi bi-twitter"></i
+              ></a>
+              <a href="#" class="btn btn-outline-light btn-sm me-2"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" class="btn btn-outline-light btn-sm"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Newsletter Subscription -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-uppercase fw-bold">Newsletter</h5>
+            <form>
+              <div class="mb-2">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <button class="btn btn-primary btn-sm w-100">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="text-center pt-4">
+          <p class="mb-0">&copy; 2025 Shashikant Shrivastava. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons (For Contact Details Icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+
+
+  </body>
+</html>
